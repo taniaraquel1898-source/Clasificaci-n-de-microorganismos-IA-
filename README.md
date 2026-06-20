@@ -1,2 +1,2 @@
-# Clasificaci-n-de-microorganismos-IA-
-Aplicación de inteligencia artificial para la clasificación de microorganismos mediante secuencias de ADN y detección de mutaciones genéticas utilizando Machine Learning y Bioinformática.
+# JupyterChart
+This directory contains the JavaScript portion of the Altair `JupyterChart`. The `JupyterChart` is based on the [AnyWidget](https://anywidget.dev/) project.
