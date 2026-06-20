@@ -5,7 +5,48 @@ from Bio import pairwise2
 # Cargar modelo y vectorizador
 model = joblib.load("modelo_adn.pkl")
 vectorizer = joblib.load("vectorizer.pkl")
+INFO_MICROORGANISMOS = {
+    "Ecoli": {
+        "nombre": "Escherichia coli",
+        "tipo": "Bacteria",
+        "clasificacion": "Intestinal, ambiental/alimentaria y hospitalaria oportunista",
+        "ambiente": "Se encuentra en el intestino de personas y animales, y también puede estar en alimentos, agua y ambiente contaminado.",
+        "enfermedades": [
+            "Diarrea",
+            "Infecciones urinarias",
+            "Neumonía",
+            "Sepsis u otras infecciones graves"
+        ],
+        "sintomas": [
+            "Diarrea",
+            "Dolor o cólicos abdominales",
+            "Vómitos",
+            "Fiebre en algunos casos",
+            "Sangre en heces u orina en casos graves"
+        ],
+        "nota": "No todas las cepas de E. coli son dañinas. Muchas viven normalmente en el intestino."
+    },
 
+    "Bacillus": {
+        "nombre": "Bacillus spp.",
+        "tipo": "Bacteria formadora de esporas",
+        "clasificacion": "Principalmente ambiental; algunas especies pueden ser alimentarias u oportunistas",
+        "ambiente": "Se encuentra comúnmente en la naturaleza, especialmente en suelo, polvo, agua y alimentos.",
+        "enfermedades": [
+            "Intoxicación alimentaria, especialmente por Bacillus cereus",
+            "Infecciones oportunistas en casos especiales",
+            "Algunas especies pueden estar relacionadas con contaminación ambiental o de laboratorio"
+        ],
+        "sintomas": [
+            "Náuseas",
+            "Vómitos",
+            "Diarrea",
+            "Dolor abdominal",
+            "Cólicos"
+        ],
+        "nota": "Bacillus es un género amplio. No todas sus especies causan enfermedad; muchas son ambientales e inofensivas."
+    }
+}
 # Función k-mers
 def get_kmers(sequence, k=4):
     return [sequence[i:i+k] for i in range(len(sequence)-k+1)]
